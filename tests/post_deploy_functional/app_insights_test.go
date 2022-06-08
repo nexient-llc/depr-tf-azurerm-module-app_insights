@@ -31,7 +31,7 @@ func (suite *TerraTestSuite) SetupSuite() {
 	}
 	suite.TerraformOptions = terraform.WithDefaultRetryableErrors(suite.T(), &terraform.Options{
 		TerraformDir: tmpDir,
-		VarFiles:     []string{path.Join(cwd, "..", "..", "test.tfvars")},
+		VarFiles:     []string{path.Join(cwd, "..", "test.tfvars")},
 	})
 	terraform.InitAndApplyAndIdempotent(suite.T(), suite.TerraformOptions)
 }
